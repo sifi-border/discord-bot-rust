@@ -1,5 +1,5 @@
-mod command_register;
-pub use command_register::*;
+mod register;
+pub use register::*;
 
 mod ping;
 pub use ping::*;
