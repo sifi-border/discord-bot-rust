@@ -5,7 +5,7 @@ use std::env;
 #[macro_use]
 extern crate log;
 
-use poise::serenity_prelude as serenity;
+pub use poise::serenity_prelude as serenity;
 
 #[derive(thiserror::Error, Debug)]
 pub enum AppError {
