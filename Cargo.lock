@@ -231,6 +231,7 @@ dependencies = [
  "env_logger",
  "log",
  "poise",
+ "rand",
  "thiserror",
  "tokio",
 ]
