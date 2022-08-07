@@ -23,6 +23,7 @@ async fn on_error(error: poise::FrameworkError<'_, (), AppError>) {
 async fn main() -> Result<(), AppError> {
     dotenv::dotenv().ok();
     env_logger::init();
+    env::set_current_dir(std::path::Path::new("src")).ok();
     let token = env::var("BOT_TOKEN").expect("BOT_TOKEN is not set");
     framework::run_framework(&token).await?;
 
