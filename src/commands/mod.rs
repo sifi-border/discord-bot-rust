@@ -6,3 +6,6 @@ pub use ping::*;
 
 mod fish;
 pub use fish::*;
+
+mod dice;
+pub use dice::*;

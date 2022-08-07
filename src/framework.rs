@@ -4,7 +4,7 @@ use crate::{on_error, serenity, AppError};
 pub async fn run_framework(token: &str) -> Result<(), AppError> {
     poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![register(), ping(), fish()],
+            commands: vec![register(), ping(), fish(), dice()],
             on_error: |ctx| Box::pin(on_error(ctx)),
             prefix_options: poise::PrefixFrameworkOptions {
                 prefix: Some("::".into()),
