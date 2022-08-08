@@ -1,10 +1,13 @@
 mod commands;
 mod framework;
+mod listeners;
+
 use std::env;
 
 #[macro_use]
 extern crate log;
 
+use framework::Data;
 pub use poise::serenity_prelude as serenity;
 
 #[derive(thiserror::Error, Debug)]
@@ -13,9 +16,9 @@ pub enum AppError {
     Serenity(#[from] serenity::Error),
 }
 
-type Context<'a> = poise::Context<'a, (), AppError>;
+type Context<'a> = poise::Context<'a, Data, AppError>;
 
-async fn on_error(error: poise::FrameworkError<'_, (), AppError>) {
+async fn on_error(error: poise::FrameworkError<'_, Data, AppError>) {
     error!("{:?}", error);
 }
 
