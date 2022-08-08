@@ -1,3 +1,5 @@
+//! bot commands
+
 mod register;
 pub use register::*;
 
