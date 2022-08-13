@@ -22,7 +22,13 @@ pub async fn dice(
         .map(|n| n.to_string())
         .collect::<Vec<_>>()
         .join(" ");
-    ctx.say(res).await?;
+    let text = format!(
+        "🎲 Number of dice is `{}`, side is `{}`. 🎲\n",
+        number_of_dice, number_of_side
+    ) + "```\n"
+        + &res
+        + "```";
+    ctx.say(text).await?;
 
     Ok(())
 }
